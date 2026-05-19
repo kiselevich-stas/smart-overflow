@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SmartOverflow demo" />
+    <title>SmartOverflow Demo</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">Headless TypeScript engine</p>
+        <h1>SmartOverflow</h1>
+        <p class="lead">
+          Resize the action bar and watch lower-priority actions move into More.
+        </p>
+      </section>
+
+      <section class="demo-card" aria-labelledby="demo-title">
+        <div class="demo-card__header">
+          <div>
+            <h2 id="demo-title">Responsive toolbar demo</h2>
+            <p>Pure core calculation + a tiny vanilla TypeScript UI layer.</p>
+          </div>
+          <label class="width-control">
+            Container width
+            <input
+              data-testid="width-slider"
+              id="width-slider"
+              type="range"
+              min="220"
+              max="760"
+              value="760"
+            />
+            <output data-testid="width-output" for="width-slider">760px</output>
+          </label>
+        </div>
+
+        <div class="toolbar-stage">
+          <div class="toolbar" data-testid="toolbar" role="toolbar" aria-label="Example actions">
+            <button type="button" class="toolbar-button" data-action-id="edit">Edit</button>
+            <button type="button" class="toolbar-button" data-action-id="delete">Delete</button>
+            <button type="button" class="toolbar-button" data-action-id="duplicate">Duplicate</button>
+            <button type="button" class="toolbar-button" data-action-id="export">Export</button>
+            <button type="button" class="toolbar-button" data-action-id="share">Share</button>
+            <button type="button" class="toolbar-button" data-action-id="archive">Archive</button>
+            <div class="more" data-testid="more-wrapper">
+              <button
+                type="button"
+                class="toolbar-button toolbar-button--more"
+                data-testid="more-button"
+                aria-haspopup="menu"
+                aria-expanded="false"
+              >
+                More
+              </button>
+              <div class="more-menu" data-testid="more-menu" role="menu" hidden></div>
+            </div>
+          </div>
+        </div>
+
+        <pre data-testid="debug-output" class="debug-output" aria-live="polite"></pre>
+      </section>
+    </main>
+    <script type="module" src="/demo/main.ts"></script>
+  </body>
+</html>
