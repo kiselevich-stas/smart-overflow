@@ -1,0 +1,85 @@
+{
+  "name": "smart-overflow",
+  "version": "0.1.0",
+  "description": "A tiny framework-agnostic TypeScript engine for responsive toolbars, tabs, menus and action bars.",
+  "keywords": [
+    "overflow",
+    "responsive",
+    "toolbar",
+    "tabs",
+    "menu",
+    "headless",
+    "typescript",
+    "ui"
+  ],
+  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/smart-overflow#readme",
+  "bugs": {
+    "url": "https://github.com/YOUR_GITHUB_USERNAME/smart-overflow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_GITHUB_USERNAME/smart-overflow.git"
+  },
+  "license": "MIT",
+  "author": "YOUR_NAME <YOUR_EMAIL>",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18.18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist coverage test-results playwright-report",
+    "demo": "vite --host 127.0.0.1",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "coverage": "vitest run --coverage",
+    "check": "npm run lint && npm run typecheck && npm run test:unit && npm run build",
+    "pack:check": "npm pack --dry-run",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1",
+    "@vitest/coverage-v8": "^4.0.8",
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4",
+    "vitest": "^4.0.8"
+  }
+}
